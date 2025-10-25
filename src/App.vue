@@ -32,23 +32,9 @@ export default {
   components: {
     OverlayCard, RevenueCard, RevenueBreakdown, NetIncome, GrossMargin, RevenueGrowth
   },
-   async created() {
-    this.data = await stockService.fetchData('$AAPL');
-
-// const Apple = stockService.fetchData('$AAPL');
-// const Meta = stockService.fetchData('$META');
-// const Microsoft = stockService.fetchData('$MSFT');
-// const Google = stockService.fetchData('$GOOG');
-// const Amazon = stockService.fetchData('$AMZN');
-// const Tesla = stockService.fetchData('$TSLA');
-// const Nvidia = stockService.fetchData('$NVDA');
-
-
-// const arrayOfCompanies = ref([Apple, Meta, Microsoft, Google, Amazon, Tesla, Nvidia])
-
-    console.log('Loaded data', this.data );
+  mounted() {
+    stockService.loadAll();
   }
-
 }
 </script>
 
